@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Turbo | Modern UI</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <h2>Conversor Pro</h2>
+            <p>Transforme seus vídeos com um clique</p>
+        </div>
+
+        <div class="drop-zone" id="dropZone">
+            <div class="icon">📁</div>
+            <span id="fileName">Arraste seu vídeo aqui ou clique</span>
+            <input type="file" id="videoInput" accept="video/*" style="display: none;">
+        </div>
+
+        <div class="form-group">
+            <label>Formato de Saída</label>
+            <select id="formatSelect">
+                <optgroup label="Áudio Profissional">
+                    <option value="mp3">MP3 (192kbps)</option>
+                    <option value="wav">WAV (Sem Perdas)</option>
+                </optgroup>
+                <optgroup label="Comprimir Vídeo">
+                    <option value="480p">480p (Super Leve)</option>
+                    <option value="720p" selected>720p (HD Otimizado)</option>
+                    <option value="1080p">1080p (Full HD)</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <button id="convertBtn">Iniciar Processamento</button>
+
+        <div class="progress-area" id="progArea">
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <p id="status">Aguardando arquivo...</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
