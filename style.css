@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    padding: 40px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.header h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+.header p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 30px; }
+
+.drop-zone {
+    border: 2px dashed #475569;
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 25px;
+}
+
+.drop-zone:hover { border-color: var(--primary); background: rgba(99, 102, 241, 0.05); }
+.drop-zone .icon { font-size: 2rem; margin-bottom: 10px; }
+.drop-zone span { color: #cbd5e1; font-size: 0.9rem; }
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 8px; margin-left: 4px; }
+
+select {
+    width: 100%;
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 14px;
+    border-radius: 12px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+button:hover { background: var(--primary-hover); transform: translateY(-2px); }
+button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.progress-area { margin-top: 30px; display: none; }
+.progress-bar { background: #334155; height: 8px; border-radius: 10px; overflow: hidden; }
+#progress { background: var(--primary); height: 100%; width: 0%; transition: 0.3s; }
+#status { font-size: 0.85rem; color: #94a3b8; margin-top: 10px; }
+
+.download-btn {
+    display: block;
+    margin-top: 15px;
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
